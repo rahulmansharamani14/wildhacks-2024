@@ -5,16 +5,19 @@ import logo from './img/logo.png';
 
 // Modal component
 const Modal = ({ onClose }) => {
+
+  // function to alrert on click
+  const handleClick = () => {
+    alert('Donated!');
+  }
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <h2>Title: title1</h2>
-        <p>Description: description 1</p>
         <p>Location: location 1</p>
         <p>Contact: contact 1</p>
         {/* Add features */}
         <button onClick={onClose}>Close</button>
-        <button>Donate</button> {/* Donate button */}
+        <button onClick={handleClick}>Donate</button> {/* Donate button */}
       </div>
     </div>
   );
