@@ -25,7 +25,7 @@ export default function Header() {
                  <MDBNavbarBrand href='#'>
             <img
               src='https://www.investopedia.com/thmb/XZMGSsDxZY9FlLQGlGLGTTPXBj4=/fit-in/1500x1000/filters:format(png):fill(white):max_bytes(150000):strip_icc()/Capital-one-c7a42efc1bbb4955a9282ab587ad839d.jpg'
-              height='30'
+              height='60'
               alt=''
               loading='lazy'
             />
