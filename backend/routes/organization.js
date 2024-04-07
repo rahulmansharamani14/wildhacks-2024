@@ -23,8 +23,9 @@ router.get('/organization/:orgID',  async (req, res) => {
         const response = await axios.get(requestEndpoint, { headers });
     
 
-
-        res.json(response.data);
+        
+        //res.json(response.data);
+        res.render('pages/organization', { organization: response.data.record });
       } catch (error) {
         // If there's an error, send an error response
         console.error('Error fetching data:', error);

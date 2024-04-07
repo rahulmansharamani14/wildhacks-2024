@@ -22,27 +22,19 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-
       <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="navbar-brand" href="#"><img style="height: 70px; width: 100px" src="images/Capital-One-Logo.png"
+            <a class="navbar-brand" href="https://www.capitalone.com/"><img style="height: 70px; width: 100px" src="/images/Capital-One-Logo.png"
                 alt=""></a>
 
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Credit Cards</a>
+            <a class="nav-link active" aria-current="page" href="/">Organizations</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Checkings and savings</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Auto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Benefits and Tools</a>
+            <a class="nav-link" href="#">Capital One Benefits</a>
           </li>
         </ul>
       </div>
@@ -73,14 +65,16 @@
   <div class="card-container">
     <% records.map(record => { %>
       <div class="card" style="width: 18rem;">
-        <img src="images/atul-pandey-0f3bZHXZSz8-unsplash.jpg" class="card-img-top" alt="...">
+        <img src="/images/<%= record.image_name.value%>.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title"><%= record.title.value%></h5>
+          <h5 class="card-title"><%= record.name.value%></h5>
           <p class="card-text"><%= record.description.value%></p>
           <p><h6>Location: </h6><%= record.Text_1.value%></p>
         
           <!-- Button trigger modal -->
           <a href="/payment"><button  type="button" class="btn btn-primary">Donate</button></a>
+          &nbsp;
+          <a href="/organization/<%= record.$id.value%>">Know more</a>
         </div>
       </div>
       <%})%>

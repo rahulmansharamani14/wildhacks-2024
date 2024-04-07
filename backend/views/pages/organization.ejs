@@ -5,10 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bootstrap demo</title>
-  <link rel="stylesheet" href="/payment.css">
+  <link rel="stylesheet" href="/styles.css">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -42,44 +43,36 @@
   </nav>
 
 
-  
-  <div class="container p-0">
-    <div class="card px-4">
-        <p class="h8 py-3">Payment Details</p>
-        <div class="row gx-3">
-            <div class="col-12">
-                <div class="d-flex flex-column">
-                    <p class="text mb-1">Person Name</p>
-                    <input class="form-control mb-3" type="text" placeholder="Name" value="Barry Allen">
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="d-flex flex-column">
-                    <p class="text mb-1">Card Number</p>
-                    <input class="form-control mb-3" type="text" placeholder="1234 5678 435678">
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="d-flex flex-column">
-                    <p class="text mb-1">Expiry</p>
-                    <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="d-flex flex-column">
-                    <p class="text mb-1">CVV/CVC</p>
-                    <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="btn mb-3">
-                  <a href="/thankyou">Pay</a>
-                    <span class="fas fa-arrow-right"></span>
-                </div>
-            </div>
-        </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <img src="/images/<%= organization.image_name.value%>.jpg %>" class="img-fluid mb-4" alt="Charity Image">
+        <h2><%= organization.title.value%></h2>
+        <br>
+        <!-- Button with Verified Symbol -->
+        <button type="button" class="btn btn-success">
+            <i class="fas fa-check-circle"></i> Verified by CapitalOne
+        </button>
+        <br>
+        <br>
+        <% organization.Category.value.map(category => { %>
+            <button type="button" class="btn btn-outline-primary">
+                <%= category %>
+            </button>
+            
+        <% }) %>
+        <!-- <p><strong>Category:</strong> Education &amp; Empowerment</p> -->
+        <p><strong>Description: </strong><%= organization.description.value%></p>
+        <p><strong>Location: </strong> <%= organization.Text_1.value%></p>
+        <p><strong>Organization Size: </strong> <%= organization.Text_2.value%></p>
+        <p><strong>Number of Donators: </strong> 2,500+</p>
+        <p><strong>Amount Needed for Donation: </strong> $50,000</p>
+        <a href="/payment"><button  type="button" class="btn btn-primary">Donate</button></a>
+        
+      </div>
     </div>
-</div>
+  </div>
 
 
 
