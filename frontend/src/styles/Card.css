@@ -1,0 +1,14 @@
+.list-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem auto;
+  /* max-width: 300px; */
+  overflow: hidden; /* Ensure the card clips any overflowing content */
+}
+
+.list-card-image {
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Optional: Add border radius for rounded corners */
+  width: auto;
+}

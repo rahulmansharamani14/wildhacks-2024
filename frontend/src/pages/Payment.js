@@ -5,104 +5,99 @@ import {
   MDBCardBody,
   MDBCol,
   MDBContainer,
+  MDBIcon,
   MDBInput,
   MDBRow,
 } from "mdb-react-ui-kit";
 
 export default function Payment() {
   return (
-    <MDBContainer
-      className="py-5"
-      fluid
-      style={{
-        backgroundImage:
-          "url(https://mdbcdn.b-cdn.net/img/Photos/Others/background3.webp)",
-      }}
-    >
-      <MDBRow className=" d-flex justify-content-center">
-        <MDBCol md="10" lg="8" xl="5">
-          <MDBCard className="rounded-3">
-            <MDBCardBody className="p-4 ">
-              <div className="text-center mb-4">
-                <h3>Settings</h3>
-                <h6>Payment</h6>
+    <MDBContainer fluid className="py-5" style={{ backgroundColor: "#eee" }}>
+      <MDBRow className="d-flex justify-content-center">
+        <MDBCol md="12" lg="10" xl="8">
+          <MDBCard>
+            <MDBCardBody className="p-md-5">
+              <div>
+                <h4>Org Title</h4>
+                <p className="text-muted pb-2">
+                  dores et dolore magna aliqua. Ut enim ad minim veniam, quis
+                </p>
               </div>
-              <p className="fw-bold mb-4 pb-2">Saved cards:</p>
-              <div className="d-flex flex-row align-items-center mb-4 pb-1">
-                <img
-                  className="img-fluid"
-                  src="https://img.icons8.com/color/48/000000/mastercard-logo.png"
-                />
-                <div className="flex-fill mx-3">
-                  <div className="form-outline">
-                    <MDBInput
-                      label="Card Number"
-                      id="form1"
-                      type="text"
-                      size="lg"
-                      value="**** **** **** 3193"
-                    />
+              <div className="px-3 py-4 border border-primary border-2 rounded mt-4 d-flex justify-content-between">
+                <div className="d-flex flex-row align-items-center">
+                  <img
+                    src="https://i.imgur.com/S17BrTx.webp"
+                    className="rounded"
+                    width="60"
+                  />
+                  <div className="d-flex flex-column ms-4">
+                    <span className="h5 mb-1">Plan Name</span>
+                    <span className="small text-muted">CHANGE PLAN</span>
                   </div>
                 </div>
-                <a href="#!">Remove card</a>
+                <div className="d-flex flex-row align-items-center">
+                  <sup className="dollar font-weight-bold text-muted">$</sup>
+                  <span className="h2 mx-1 mb-0">8,350</span>
+                  <span className="text-muted font-weight-bold mt-2">
+                    / year
+                  </span>
+                </div>
               </div>
-              <div className="d-flex flex-row align-items-center mb-4 pb-1">
-                <img
-                  className="img-fluid"
-                  src="https://img.icons8.com/color/48/000000/visa.png"
-                />
-                <div className="flex-fill mx-3">
-                  <div className="form-outline">
-                    <MDBInput
-                      label="Card Number"
-                      id="form2"
-                      type="text"
-                      size="lg"
-                      value="**** **** **** 4296"
-                    />
+              <h4 className="mt-5">Payment details</h4>
+              <div className="mt-4 d-flex justify-content-between align-items-center">
+                <div className="d-flex flex-row align-items-center">
+                  <img
+                    src="https://i.imgur.com/qHX7vY1.webp"
+                    className="rounded"
+                    width="70"
+                  />
+                  <div className="d-flex flex-column ms-3">
+                    <span className="h5 mb-1">Credit Card</span>
+                    <span className="small text-muted">
+                      1234 XXXX XXXX 2570
+                    </span>
                   </div>
                 </div>
-                <a href="#!">Remove card</a>
+                <MDBInput
+                  label="CVC"
+                  id="form1"
+                  type="text"
+                  style={{ width: "70px" }}
+                />
               </div>
-              <p className="fw-bold mb-4">Add new card:</p>
+              <div className="mt-4 d-flex justify-content-between align-items-center">
+                <div className="d-flex flex-row align-items-center">
+                  <img
+                    src="https://i.imgur.com/qHX7vY1.webp"
+                    className="rounded"
+                    width="70"
+                  />
+                  <div className="d-flex flex-column ms-3">
+                    <span className="h5 mb-1">Credit Card</span>
+                    <span className="small text-muted">
+                      2344 XXXX XXXX 8880
+                    </span>
+                  </div>
+                </div>
+                <MDBInput
+                  label="CVC"
+                  id="form2"
+                  type="text"
+                  style={{ width: "70px" }}
+                />
+              </div>
+              <h6 className="mt-4 mb-3 text-primary text-uppercase">
+                ADD PAYMENT METHOD
+              </h6>
               <MDBInput
-                label="Cardholder's Name"
+                label="Email address"
                 id="form3"
-                type="text"
                 size="lg"
-                value="Anna Doe"
+                type="email"
               />
-              <MDBRow className="my-4">
-                <MDBCol size="7">
-                  <MDBInput
-                    label="Card Number"
-                    id="form4"
-                    type="text"
-                    size="lg"
-                    value="1234 5678 1234 5678"
-                  />
-                </MDBCol>
-                <MDBCol size="3">
-                  <MDBInput
-                    label="Expire"
-                    id="form5"
-                    type="password"
-                    size="lg"
-                    placeholder="MM/YYYY"
-                  />
-                </MDBCol>
-                <MDBCol size="2">
-                  <MDBInput
-                    label="CVV"
-                    id="form6"
-                    type="password"
-                    size="lg"
-                    placeholder="CVV"
-                  />
-                </MDBCol>
-              </MDBRow>
-              <MDBBtn color="success" size="lg" block>
-                Add card
+              <MDBBtn block size="lg" className="mt-3">
+              
+                Donate 
               </MDBBtn>
             </MDBCardBody>
           </MDBCard>

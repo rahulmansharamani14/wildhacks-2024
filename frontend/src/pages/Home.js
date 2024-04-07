@@ -13,9 +13,9 @@ function Home() {
   ];
 
   return (
-    <div>
-      <SearchBar />
-      <div className="cards-container">
+  <div className=''>
+      {/* <SearchBar /> */}
+      <div className="list-cards-container">
         {cardsData.map((card, index) => (
           <Card key={index} title={card.title} description={card.description} />
         ))}

@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import SearchBar from './components/SearchBar';
 import Card from './components/Card';
 import Home from './pages/Home';
+import Payment from './pages/Payment';
 
 
 
@@ -27,7 +28,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/search" element={<SearchBar />} />
+        <Route path= "/payment" element={<Payment />} />
       </Routes>
 
       <Footer />
