@@ -9,6 +9,8 @@ import SearchBar from './components/SearchBar';
 import Card from './components/Card';
 import Home from './pages/Home';
 import Payment from './pages/Payment';
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 
 
@@ -29,6 +31,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path= "/payment" element={<Payment />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
 
       <Footer />
