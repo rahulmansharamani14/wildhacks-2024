@@ -31,6 +31,12 @@ app.get('/getData', cors(corsOptions), async (req, res) => {
         const response = await axios.get(requestEndpoint, { headers });
     
         // Send the response from the other API to the client
+        //console.log(response.data.records);
+
+        response.data.records.map((record) => {
+            console.log(record);
+        })
+
         res.json(response.data);
       } catch (error) {
         // If there's an error, send an error response
