@@ -68,4 +68,77 @@ router.get('/', async (req, res) => {
 
 });
 
+router.post('/donation', async (req, res) => {
+  console.log("req.body: ", req.body);
+
+  const requestEndpoint = `https://${process.env.subdomain}.kintone.com/k/v1/record.json`;
+
+  try {
+      // Custom headers to pass along with the request
+      const headers = {
+          'X-Cybozu-API-Token':process.env.API_TOKEN_DONATION
+      };
+  
+      // const reqBody = {'record': {
+      //   'donor_id': {
+      //     'value': req.body.donor_id,
+      //   },
+      //   'ngo_id': {
+      //     'value': req.body.ngo_id,
+      //   },
+      //   'amount': {
+      //     'value': req.body.amount,
+      //   }
+      // }
+
+      const reqBody = {
+        'app': 6, // '2' is the app ID of the 'Donations' app
+        'record': {
+          'donor_id': {
+            'value': req.body.donor_id,
+          },
+          'ngo_id': {
+            'value': req.body.ngo_id,
+          },
+          'amount': {
+            'value': req.body.amount,
+          },
+          'recurring': {  
+            'value': req.body.recurring,
+          }
+      }
+    }
+
+      console.log("reqBody: ", reqBody);
+
+      const response = await axios.post(requestEndpoint, {   "app": 6,
+      "record" : {
+          "donor_id": {
+              "value": 7
+          },
+          "ngo_id": {
+              "value": 9
+          },
+          "amount": {
+              "value": 100
+          },
+          "recurring": {
+              "value": false
+          }
+      }
+  })
+      console.log("response: ", response.data);
+
+    
+    } catch (error) {
+      // If there's an error, send an error response
+      console.error('Error fetching data:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+
+});
+
+
+
 module.exports = router;

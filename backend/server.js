@@ -8,6 +8,8 @@ app.set('view engine', 'ejs');
 
 require('dotenv').config();
 
+app.use(express.json());
+
 const PORT = 4000;
 
 app.use(cors());
