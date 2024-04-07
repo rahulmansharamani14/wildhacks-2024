@@ -1,75 +1,28 @@
-import React from 'react';
+// Modal component
 
-function Modal({ onClose, title, description, location, contact }) {
+const Modal = ({ onClose }) => {
+  // function to alert on click
+  const handleClick = () => {
+    alert('Donated!');
+  };
+
   return (
-    <div style={styles.overlay}>
-      <div style={styles.modal}>
-        <div style={styles.modalHeader}>
-          <h2>{title}</h2>
-          <button style={styles.closeButton} onClick={onClose}>X</button>
-        </div>
-        <div style={styles.modalBody}>
-          <p>Description: {description}</p>
-          <p>Location: {location}</p>
-          <p>Contact: {contact}</p>
-        </div>
-        <div style={styles.modalFooter}>
-          <button style={styles.actionButton} onClick={onClose}>Close</button>
-          <button style={styles.actionButton}>Donate</button>
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal">
+        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+          <h1>Title 1</h1>
+          <p>Description: description 1</p>
+          <p>Location: location 1</p>
+          <p>Contact: contact 1</p>
+          {/* Add features */}
+          <div className="buttons">
+            <button className="close-btn" onClick={onClose}>Close</button>
+            <button className="donate-btn" onClick={handleClick}>Donate</button> {/* Donate button */}
+          </div>
         </div>
       </div>
     </div>
   );
-}
-
-const styles = {
-  overlay: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  modal: {
-    backgroundColor: 'white',
-    padding: '20px',
-    borderRadius: '8px',
-    position: 'relative',
-    width: '80%',
-    maxWidth: '500px'
-  },
-  modalHeader: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: '10px'
-  },
-  modalBody: {
-    marginBottom: '10px'
-  },
-  modalFooter: {
-    display: 'flex',
-    justifyContent: 'flex-end'
-  },
-  closeButton: {
-    background: 'transparent',
-    border: 'none',
-    fontSize: '18px',
-    cursor: 'pointer'
-  },
-  actionButton: {
-    marginLeft: '10px',
-    padding: '8px 16px',
-    borderRadius: '4px',
-    backgroundColor: '#007bff',
-    color: 'white',
-    border: 'none',
-    cursor: 'pointer'
-  }
 };
 
 export default Modal;
