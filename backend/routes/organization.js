@@ -68,6 +68,53 @@ router.get('/', async (req, res) => {
 
 });
 
+router.get('/search/:category', async (req, res) => {
+
+  const category = req.params.category;
+
+  const requestEndpoint = `https://${process.env.subdomain}.kintone.com/k/v1/records.json`;
+
+  try {
+      // Custom headers to pass along with the request
+      const headers = {
+          'X-Cybozu-API-Token':process.env.API_TOKEN
+      };
+
+      const params = {
+        app: 1,
+        query: 'Category in ("Education")', // Replace with your field and value
+      };
+  
+      // Make a GET request to another API using Axios
+      const response = await axios.get(`${requestEndpoint}?app=1&query=Category in ("${category}")`, { headers });
+
+
+      
+
+      console.log("response: ", response);
+  
+      // Send the response from the other API to the client
+      //console.log(response.data.records);
+
+      // response.data.records.map((record) => {
+      //     console.log(record);
+      // })
+      console.log("response.data: ", response.data);
+
+      // console.log("records: ", records);
+      res.json(response.data);
+     // res.render('pages/index', { records: response.data.records });
+    } catch (error) {
+      // If there's an error, send an error response
+      console.error('Error fetching data:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+
+
+});
+
+
+
 router.post('/donation', async (req, res) => {
   console.log("req.body: ", req.body);
 
